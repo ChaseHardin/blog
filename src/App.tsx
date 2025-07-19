@@ -1,13 +1,7 @@
-import FromCleanCodeToCopilotPost from "./posts/FromCleanCodeToCopilotPost.mdx";
-import WritingTestsFeelsSlow from "./posts/WritingTestsFeelsSlowPost.mdx";
+import { AppRoutes } from "./AppRoutes";
 
 function App() {
-  return (
-    <div>
-      <FromCleanCodeToCopilotPost />
-      <WritingTestsFeelsSlow />
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
