@@ -26,7 +26,7 @@ export const Menu = () => {
         {/* Hamburger for mobile */}
         {!isOpen && (
           <button
-            className="md:hidden text-emerald-400 focus:outline-none"
+            className="md:hidden text-blue-400 focus:outline-none"
             onClick={() => setIsOpen(true)}
             aria-label="Open menu"
           >
@@ -67,7 +67,7 @@ export const Menu = () => {
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
-            className="absolute top-6 right-6 text-emerald-400 focus:outline-none"
+            className="absolute top-6 right-6 text-blue-400 focus:outline-none"
           >
             <svg
               className="w-8 h-8"
@@ -88,7 +88,7 @@ export const Menu = () => {
               <li key={to}>
                 <Link
                   to={to}
-                  className="text-zinc-300 hover:text-emerald-400 font-semibold"
+                  className="text-zinc-300 hover:text-blue-400 font-semibold"
                   onClick={() => setIsOpen(false)}
                 >
                   {label}
