@@ -15,7 +15,7 @@ const posts: Post[] = [
     description:
       "A cautionary call to aspiring developers in the AI age. This post explores how tools like Copilot and ChatGPT are transforming software development—and why skipping the fundamentals in favor of faster results can quietly erode craftsmanship. Learn why mastering the basics, reading the classics, and treating AI as a multiplier (not a crutch) is the only path to becoming a real software engineer.",
     author: "Chase Hardin",
-    date: "July 19, 2025",
+    date: "July 18, 2025",
   },
   {
     title: "Writing Tests Feels Slow—Until It Isn’t",
@@ -23,12 +23,12 @@ const posts: Post[] = [
     description:
       "Why testing isn't a slowdown—it's a speed boost in disguise. This post tackles the common misconception that writing tests slows down development. It makes the case that automated tests actually accelerate delivery by catching bugs early, documenting behavior, making refactoring safe, and reducing long-term costs. Whether you're building something small or scaling a long-term product, testing is one of the smartest investments you can make.",
     author: "Chase Hardin",
-    date: "July 19, 2025",
+    date: "July 16, 2025",
   },
   {
     title: "The Functional Builder Pattern",
     url: "functional-builder-pattern",
-    description: "",
+    description: "Tired of state bugs and clunky test data setups? This post explores a cleaner alternative to the traditional builder pattern using pure functions and the power of composition. Learn how functional builders can simplify data setup, eliminate side effects, and make your test code more readable and reusable. Whether you're working in React or just want a more predictable way to construct state, this post walks through real-world examples—including a woodworking-inspired case study—to help you rethink how you build.",
     author: "Chase Hardin",
     date: "August 10th, 2020",
   },
