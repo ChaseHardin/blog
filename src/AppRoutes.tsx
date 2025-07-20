@@ -1,13 +1,17 @@
 import { Routes, Route } from "react-router-dom";
-import { LandingPage } from "./pages/LandingPage";
+import {
+  fromCleanCodeToAIDetails,
+  functionalBuilderPatternDetails,
+  LandingPage,
+  writingTestsFeelsSlowDetails,
+} from "./pages/LandingPage";
 import { MainLayout } from "./components/MainLayout";
 import { BlogPostWrapper } from "./components/BlogPostWrapper";
 
 import AboutMe from "./pages/AboutMe.mdx";
 import WritingTestsFeelsSlowPost from "./posts/WritingTestsFeelsSlowPost.mdx";
 import FromCleanCodeToCopilotPost from "./posts/FromCleanCodeToCopilotPost.mdx";
-import FunctionalBuilderPattern from './posts/FunctionalBuilderPatternPost.mdx';
-
+import FunctionalBuilderPattern from "./posts/FunctionalBuilderPatternPost.mdx";
 
 export const AppRoutes = () => {
   return (
@@ -17,7 +21,11 @@ export const AppRoutes = () => {
         <Route
           path="from-clean-code-to-copilot"
           element={
-            <BlogPostWrapper>
+            <BlogPostWrapper
+              title={fromCleanCodeToAIDetails.title}
+              description={fromCleanCodeToAIDetails.description}
+              keywords={fromCleanCodeToAIDetails.keywords}
+            >
               <FromCleanCodeToCopilotPost />
             </BlogPostWrapper>
           }
@@ -25,7 +33,11 @@ export const AppRoutes = () => {
         <Route
           path="writing-tests-feels-slow"
           element={
-            <BlogPostWrapper>
+            <BlogPostWrapper
+              title={writingTestsFeelsSlowDetails.title}
+              description={writingTestsFeelsSlowDetails.description}
+              keywords={writingTestsFeelsSlowDetails.keywords}
+            >
               <WritingTestsFeelsSlowPost />
             </BlogPostWrapper>
           }
@@ -33,7 +45,11 @@ export const AppRoutes = () => {
         <Route
           path="functional-builder-pattern"
           element={
-            <BlogPostWrapper>
+            <BlogPostWrapper
+              title={functionalBuilderPatternDetails.title}
+              description={functionalBuilderPatternDetails.description}
+              keywords={functionalBuilderPatternDetails.keywords}
+            >
               <FunctionalBuilderPattern />
             </BlogPostWrapper>
           }
@@ -41,7 +57,11 @@ export const AppRoutes = () => {
         <Route
           path="about"
           element={
-            <BlogPostWrapper>
+            <BlogPostWrapper
+              title={'About Chase Hardin'}
+              description={'Chase Hardin is a full stack software engineer.'}
+              keywords={'Chase Hardin, Software Engineer, Software Developer, Chase Hardin Blog'}
+              >
               <AboutMe />
             </BlogPostWrapper>
           }

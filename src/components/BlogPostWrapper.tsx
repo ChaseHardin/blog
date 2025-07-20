@@ -1,11 +1,25 @@
+import { Helmet } from "react-helmet";
+
 type BlogPostWrapperProps = {
+  title: string;
+  description: string;
+  keywords: string;
   children: React.ReactNode;
 };
 
-export const BlogPostWrapper = ({ children }: BlogPostWrapperProps) => {
+export const BlogPostWrapper = ({ children, title, description, keywords }: BlogPostWrapperProps) => {
   return (
-    <article
-      className="
+    <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta name="author" content="Chase Hardin" />
+        <meta name="keywords" content={keywords} />
+      </Helmet>
+      <article
+        className="
         max-w-3xl mx-auto px-6 py-12 bg-zinc-900
         text-zinc-100 leading-relaxed
 
@@ -27,8 +41,9 @@ export const BlogPostWrapper = ({ children }: BlogPostWrapperProps) => {
         [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:marker:text-zinc-100
         [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:marker:text-zinc-100
       "
-    >
-      {children}
-    </article>
+      >
+        {children}
+      </article>
+    </>
   );
 };
