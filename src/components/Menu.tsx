@@ -11,7 +11,6 @@ export const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Lock scroll and focus trap
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -21,7 +20,6 @@ export const Menu = () => {
     }
   }, [isOpen]);
 
-  // Close on Escape key
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -32,7 +30,6 @@ export const Menu = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, [isOpen]);
 
-  // Hamburger icon morph
   const HamburgerIcon = ({ open }: { open: boolean }) => (
     <svg
       className="w-6 h-6 text-blue-400"
@@ -84,7 +81,7 @@ export const Menu = () => {
           <img
             src={profilePic}
             alt="Profile"
-            className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
+            className="w-10 h-10 rounded-full object-cover"
           />
           <span className="text-white font-extrabold text-xl tracking-wide">
             Chase Hardin
@@ -118,12 +115,12 @@ export const Menu = () => {
         </ul>
       </div>
 
-      {/* Slide-out mobile menu */}
+      {/* Fullscreen sliding menu */}
       <aside
         id="mobile-menu"
         tabIndex={-1}
         ref={menuRef}
-        className={`fixed top-0 right-0 z-50 h-full w-72 bg-zinc-900 shadow-xl rounded-l-2xl p-6
+        className={`fixed top-0 right-0 z-50 h-full w-full bg-zinc-900 p-8
           transform transition-transform duration-400 ease-in-out
           ${
             isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
@@ -133,14 +130,14 @@ export const Menu = () => {
         aria-hidden={!isOpen}
       >
         {/* Header: Profile + Name + Close button */}
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-center justify-between mb-16">
           <div className="flex items-center gap-x-4">
             <img
               src={profilePic}
               alt="Profile"
-              className="w-12 h-12 rounded-full border-2 border-blue-400 object-cover"
+              className="w-14 h-14 rounded-full object-cover ring-2 ring-blue-400"
             />
-            <span className="text-white font-extrabold text-lg tracking-wide">
+            <span className="text-white font-extrabold text-xl tracking-wide">
               Chase Hardin
             </span>
           </div>
@@ -150,7 +147,7 @@ export const Menu = () => {
             className="text-blue-400 hover:text-blue-500 transition-colors duration-200 focus:outline-none"
           >
             <svg
-              className="w-8 h-8"
+              className="w-10 h-10"
               fill="none"
               stroke="currentColor"
               strokeWidth={2.5}
@@ -164,7 +161,7 @@ export const Menu = () => {
         </div>
 
         {/* Menu links */}
-        <ul className="flex flex-col space-y-8">
+        <ul className="flex flex-col space-y-12 text-2xl">
           {menuItems.map(({ label, to }, idx) => (
             <li
               key={to}
@@ -176,7 +173,7 @@ export const Menu = () => {
               <Link
                 to={to}
                 onClick={() => setIsOpen(false)}
-                className="text-zinc-300 hover:text-blue-400 font-semibold text-lg tracking-wide transition-colors duration-200"
+                className="text-zinc-300 hover:text-blue-400 font-semibold tracking-wide transition-colors duration-200"
               >
                 {label}
               </Link>
@@ -187,7 +184,7 @@ export const Menu = () => {
 
       {/* Overlay background */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity duration-300
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300
           ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
         `}
         aria-hidden="true"
